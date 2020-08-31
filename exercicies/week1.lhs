@@ -107,16 +107,16 @@ Implemente cubicIter
 \begin{code}
 goodEnough' :: Double -> Double -> Bool
 goodEnough' tent x 
-    |   abs(tent ^ 2 - x) < 0.0001  =   True
-    |   otherwise                   =   False
+    |   abs(tent ^ 3 - x) < 0.0001      =   True
+    |   otherwise                       =   False
 
 approximation :: Double -> Double -> Double
-approximation x y = ((x / (y ^ 2)) - (2 * y)) / 3
+approximation x y = ((x / (y ^ 2)) - 2 * y) / 3
 
 cubicIter :: Double -> Double -> Double
 cubicIter tent rad 
-    |   goodEnough' tent rad        =   approximation rad tent
-    |   otherwise                   =   cubicIter (improve tent rad) rad
+    |   goodEnough' tent rad        =   tent
+    |   otherwise                   =   cubicIter (approximation rad tent) rad
 \end{code}
 
 ==  LIST COMPREHENSIONS    ==

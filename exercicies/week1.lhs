@@ -140,5 +140,9 @@ grid m n
 Iplmente scalarProduct
 \begin{code}
 scalarProduct :: [Int] -> [Int] -> Int
-scalarProduct xs ys = sum [x * y | x <- xs, y <- ys]
+scalarProduct xs ys = sum[x * y | (x, y) <- sp' xs ys []]
+    where 
+        sp' [] _ ac    =   ac
+        sp' xs ys ac   =   sp' (tail xs) (tail ys) (ac ++ [(head xs, head ys)])
+
 \end{code}

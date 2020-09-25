@@ -1,3 +1,5 @@
-# BCC222 - Programação Funcional
+Tutoria de BCC222
+=====================
 
-Repositório de armazenamento de todo código fonte desenvolvido durante os estudos de Programação Funcional.
+Material para tutoria de BCC222.
+
